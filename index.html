@@ -2,25 +2,75 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
-  <title>jewellnest — Stay Connected</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>JewellNest — Connect with us</title>
+
+  <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Font Awesome -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-  <link href="assets/css/styles.css" rel="stylesheet">
+
+  <style>
+    :root{
+      --accent:#E1306C;
+      --muted:#6c757d;
+      --card-radius:14px;
+    }
+    html,body{height:100%}
+    body{
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: #f7f8fb;
+      color: #222;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+
+    /* navbar */
+    .navbar{background:rgba(255,255,255,0.85);backdrop-filter: blur(4px);}
+
+    /* hero */
+    .hero{
+      background: linear-gradient(135deg, rgba(225,48,108,0.06), rgba(64,93,230,0.04));
+      padding: 3.5rem 0;
+    }
+    .hero-card{border-radius:18px;box-shadow:0 10px 30px rgba(15,23,42,0.06)}
+    .brand-accent{color:var(--accent);font-weight:700}
+
+    /* buttons */
+    .btn-follow{background:linear-gradient(45deg,var(--accent),#ff8a65);color:#fff;border:0}
+    .btn-ws{background:#25D366;color:#fff;border:0}
+    .btn-rate{background:#4285F4;color:#fff;border:0}
+
+    /* quick cards */
+    .quick-card{border-radius:var(--card-radius);transition:transform .16s ease, box-shadow .16s ease}
+    .quick-card:hover{transform:translateY(-6px);box-shadow:0 12px 28px rgba(2,6,23,0.06)}
+    .quick-card .fa-2x{margin-bottom:0.5rem}
+
+    /* contact */
+    .contact-card{max-width:920px;margin:auto;border-radius:12px}
+
+    footer{background:#fff;padding:2rem 0;border-top:1px solid #eef0f3}
+    @media (max-width:575.98px){
+      .hero{padding:2rem 0}
+    }
+  </style>
 </head>
 <body>
+
   <!-- NAV -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+  <nav class="navbar navbar-expand-lg sticky-top shadow-sm">
     <div class="container">
       <a class="navbar-brand d-flex align-items-center gap-2" href="#">
-        <span class="brand-accent">jewellnest</span>
+        <span class="brand-accent">JewellNest</span>
         <small class="text-muted">Connect</small>
       </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
+
       <div class="collapse navbar-collapse" id="navMenu">
-        <ul class="navbar-nav ms-auto">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
           <li class="nav-item"><a class="nav-link" href="#follow">Follow</a></li>
           <li class="nav-item"><a class="nav-link" href="#chat">WhatsApp</a></li>
           <li class="nav-item"><a class="nav-link" href="#rate">Rate</a></li>
@@ -31,81 +81,111 @@
   </nav>
 
   <!-- HERO -->
-  <header class="hero py-5">
+  <header class="hero">
     <div class="container">
       <div class="row align-items-center g-4">
         <div class="col-lg-6">
           <div class="hero-card p-4">
-            <h1 class="display-6 mb-2">Stay in touch — quick links to our socials media </h1>
-           
+            <h1 class="display-6 mb-2">Stay connected — quick links to our socials & contact</h1>
+            <p class="text-muted">Follow our Instagram, chat instantly on WhatsApp, rate us on Google Maps, or drop a message — all in one place.</p>
 
             <div class="d-flex flex-wrap gap-2 mt-3">
-              <a id="btnFollow" class="btn btn-lg btn-follow d-flex align-items-center gap-2" href="https://www.instagram.com/jewellnest._?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer">
-                <i class="fa-brands fa-instagram fa-lg"></i> Follow us on instagram
+              <a id="btnFollow" class="btn btn-lg btn-follow d-flex align-items-center gap-2" href="https://www.instagram.com/jewellnest._?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer" aria-label="Follow on Instagram">
+                <i class="fa-brands fa-instagram fa-lg"></i> Follow
               </a>
 
-              <a id="btnWhatsApp" class="btn btn-lg btn-ws d-flex align-items-center gap-2" href="https://wa.me/9535076301?text=Hi%20there!" target="_blank" rel="noopener noreferrer">
-                <i class="fa-brands fa-whatsapp fa-lg"></i> Chat us on WhatsApp
+              <a id="btnWhatsApp" class="btn btn-lg btn-ws d-flex align-items-center gap-2" href="https://wa.me/919759000916?text=Hi%20JewellNest!" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+                <i class="fa-brands fa-whatsapp fa-lg"></i> Chat on WhatsApp
               </a>
 
-              <a id="btnRate" class="btn btn-lg btn-rate d-flex align-items-center gap-2" href="https://share.google/uAB5AJNrAG3d2OnME" target="_blank" rel="noopener noreferrer">
-                <i class="fa-solid fa-star fa-lg"></i> Rate us on Maps
+              <a id="btnRate" class="btn btn-lg btn-rate d-flex align-items-center gap-2" href="https://share.google/uAB5AJNrAG3d2OnME" target="_blank" rel="noopener noreferrer" aria-label="Rate on Google Maps">
+                <i class="fa-solid fa-star fa-lg"></i> Rate on Maps
               </a>
 
-             
-          </div>
+              <button class="btn btn-outline-secondary btn-lg" id="previewBtn" aria-label="Preview Instagram">Preview</button>
+            </div>
+
+            
         </div>
 
         <div class="col-lg-6">
           <div class="card p-3">
             <div class="row g-3">
+              <!-- Instagram -->
               <div class="col-6">
-                <a class="d-block text-decoration-none quick-link" href="https://www.instagram.com/jewellnest._?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer">
-                  <div class="p-3 border rounded-3 text-center">
-                    <i class="fa-brands fa-instagram fa-2x mb-2 accent"></i>
-                    <h6 class="mb-0">Instagram</h6>
+                <a href="https://www.instagram.com/jewellnest._?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="text-decoration-none">
+                  <div class="p-3 text-center quick-card bg-white">
+                    <i class="fa-brands fa-instagram fa-2x" style="color:var(--accent)"></i>
+                    <h6 class="mb-0 mt-2">Instagram</h6>
                     <small class="text-muted d-block">Latest posts & stories</small>
                   </div>
                 </a>
               </div>
 
+              <!-- WhatsApp -->
               <div class="col-6">
-                <a class="d-block text-decoration-none quick-link" href="https://wa.me/9535076301" target="_blank" rel="noopener noreferrer">
-                  <div class="p-3 border rounded-3 text-center">
-                    <i class="fa-brands fa-whatsapp fa-2x mb-2" style="color:#25D366"></i>
-                    <h6 class="mb-0">WhatsApp</h6>
+                <a href="https://wa.me/919759000916" class="text-decoration-none">
+                  <div class="p-3 text-center quick-card bg-white">
+                    <i class="fa-brands fa-whatsapp fa-2x" style="color:#25D366"></i>
+                    <h6 class="mb-0 mt-2">WhatsApp</h6>
                     <small class="text-muted d-block">Quick customer chat</small>
                   </div>
                 </a>
               </div>
 
+              <!-- Google Maps -->
               <div class="col-6">
-                <a class="d-block text-decoration-none quick-link" href="https://share.google/uAB5AJNrAG3d2OnME" target="_blank" rel="noopener noreferrer">
-                  <div class="p-3 border rounded-3 text-center">
-                    <i class="fa-solid fa-map-location-dot fa-2x mb-2" style="color:#4285F4"></i>
-                    <h6 class="mb-0">Google Maps</h6>
+                <a href="https://share.google/uAB5AJNrAG3d2OnME" class="text-decoration-none">
+                  <div class="p-3 text-center quick-card bg-white">
+                    <i class="fa-solid fa-map-location-dot fa-2x" style="color:#4285F4"></i>
+                    <h6 class="mb-0 mt-2">Google Maps</h6>
                     <small class="text-muted d-block">Find & rate us</small>
                   </div>
                 </a>
               </div>
 
+              <!-- Email -->
               <div class="col-6">
-                <a class="d-block text-decoration-none quick-link" href="mailto:irasheed19su@gmail.com" target="_blank" rel="noopener noreferrer">
-                  <div class="p-3 border rounded-3 text-center">
-                    <i class="fa-solid fa-envelope fa-2x mb-2"></i>
-                    <h6 class="mb-0">Email</h6>
+                <a href="mailto:reachtojewellnest@gmail.com" class="text-decoration-none">
+                  <div class="p-3 text-center quick-card bg-white">
+                    <i class="fa-solid fa-envelope fa-2x"></i>
+                    <h6 class="mb-0 mt-2">Email</h6>
                     <small class="text-muted d-block">Send us an email</small>
                   </div>
                 </a>
               </div>
+
+              <!-- Facebook -->
+              <div class="col-6">
+                <a href="https://www.facebook.com/share/1DfJjami2o/" class="text-decoration-none" target="_blank" rel="noopener noreferrer">
+                  <div class="p-3 text-center quick-card bg-white">
+                    <i class="fa-brands fa-facebook fa-2x" style="color:#1877F2"></i>
+                    <h6 class="mb-0 mt-2">Facebook</h6>
+                    <small class="text-muted d-block">Official Page</small>
+                  </div>
+                </a>
+              </div>
+
+              <!-- YouTube -->
+              <div class="col-6">
+                <a href="https://youtube.com/@touchtoindia?si=-DmpK3qHx9obAh71" class="text-decoration-none" target="_blank" rel="noopener noreferrer">
+                  <div class="p-3 text-center quick-card bg-white">
+                    <i class="fa-brands fa-youtube fa-2x" style="color:#FF0000"></i>
+                    <h6 class="mb-0 mt-2">YouTube</h6>
+                    <small class="text-muted d-block">Watch our videos</small>
+                  </div>
+                </a>
+              </div>
+
             </div>
           </div>
         </div>
-      </div> <!-- row -->
-    </div> <!-- container -->
+
+      </div><!-- row -->
+    </div><!-- container -->
   </header>
 
-  <!-- CONTACT -->
+  <!-- CONTACT FORM -->
   <section id="contact" class="py-5">
     <div class="container">
       <div class="card contact-card shadow-sm p-4">
@@ -150,18 +230,18 @@
   </section>
 
   <!-- FOOTER -->
-  <footer class="text-center py-4">
+  <footer class="text-center">
     <div class="container">
-      <p class="mb-1">© <span id="year"></span>   codeversedigital   All Right Recived   Devloped By Rasheed.dev</p>
-      
+      <p class="mb-1">© <span id="year"></span> DEVELOPED BY CODEVERSE DIGITAL 
+         </p>
       <div class="d-flex justify-content-center gap-2 mt-2">
-        <a class="btn btn-outline-secondary btn-sm" href="mailto:rasheed19su@gmail.com">Email</a>
-        <a class="btn btn-outline-secondary btn-sm" href="tel:+9535076301">Call</a>
+        <a class="btn btn-outline-secondary btn-sm" href="rasheed19su@gmail.com">Email</a>
+        <a class="btn btn-outline-secondary btn-sm" href="tel:+919535076301">Call</a>
       </div>
     </div>
   </footer>
 
-  <!-- Modal preview (simple) -->
+  <!-- INSTAGRAM PREVIEW MODAL -->
   <div class="modal fade" id="previewModal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg">
       <div class="modal-content">
@@ -177,7 +257,63 @@
     </div>
   </div>
 
+  <!-- Bootstrap JS bundle -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/js/main.js"></script>
+
+  <script>
+    // Insert current year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Contact form handling: tries to POST to /send (if you have backend), otherwise fallback to mailto
+    (function(){
+      const form = document.getElementById('contactForm');
+      const alertBox = document.getElementById('formAlert');
+
+      form.addEventListener('submit', function(e){
+        e.preventDefault();
+        e.stopPropagation();
+        if(!form.checkValidity()){
+          form.classList.add('was-validated');
+          return;
+        }
+
+        const payload = {
+          name: form.name.value.trim(),
+          email: form.email.value.trim(),
+          subject: form.subject.value.trim(),
+          message: form.message.value.trim(),
+        };
+
+        // Try POST to /send (change to your endpoint)
+        fetch('/send', {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify(payload)
+        }).then(res => {
+          if(res.ok) return res.json();
+          throw new Error('network');
+        }).then(json => {
+          alertBox.style.display = 'block';
+          alertBox.innerHTML = '<div class="alert alert-success">Thanks! We received your message.</div>';
+          form.reset();
+          form.classList.remove('was-validated');
+        }).catch(err => {
+          // fallback — open user's mail client with message prefilled
+          const subject = encodeURIComponent(payload.subject);
+          const body = encodeURIComponent('Name: ' + payload.name + '\\nEmail: ' + payload.email + '\\n\\n' + payload.message);
+          window.location.href = 'mailto:info@yourcompany.com?subject=' + subject + '&body=' + body;
+        });
+      });
+    })();
+
+    // Preview button opens Instagram profile inside modal iframe (if allowed by Instagram)
+    document.getElementById('previewBtn').addEventListener('click', function(){
+      const iframe = document.getElementById('instPreview');
+      iframe.src = 'https://www.instagram.com/jewellnest._?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==';
+      const modalEl = document.getElementById('previewModal');
+      const modal = new bootstrap.Modal(modalEl);
+      modal.show();
+    });
+  </script>
 </body>
 </html>

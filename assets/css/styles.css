@@ -13,3 +13,4 @@ body{font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial;line
 footer{background:#f8f9fa;padding:2rem 0}
 .accent{color:var(--accent)}
 @media (max-width:575.98px){.hero{padding:2rem 0}}
+
